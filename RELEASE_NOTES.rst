@@ -55,6 +55,10 @@ For example, in your ``custom_config.py``:
 Bug Fixes
 ^^^^^^^^^
 
+- Disable ``attrs`` state management on ``MappedOperator`` (#24772)
+- Serialize ``pod_override`` to JSON before pickling ``executor_config`` (#24356)
+- Fix ``pid`` check (#24636)
+- Rotate session id during login (#25771)
 - Fix mapped sensor with reschedule mode (#25594)
 - Cache the custom secrets backend so the same instance gets re-used (#25556)
 - Add right padding (#25554)
@@ -83,13 +87,13 @@ Bug Fixes
 - No grid auto-refresh for backfill dag runs (#25042)
 - Fix tag link on dag detail page (#24918)
 - Fix zombie task handling with multiple schedulers (#24906)
-- Bind log server on worker to IPv6 address (#24755) (#24846)
+- Bind log server on worker to ``IPv6`` address (#24755) (#24846)
 - Add ``%z`` for ``%(asctime)s`` to fix timezone for logs on UI (#24811)
 - ``TriggerDagRunOperator.operator_extra_links`` is attr (#24676)
 - Send DAG timeout callbacks to processor outside of ``prohibit_commit`` (#24366)
 - Don't rely on current ORM structure for db clean command (#23574)
 - Clear next method when clearing TIs (#23929)
-- Rotate session id during login (#25771)
+- Two typing fixes (#25690)
 
 Doc only changes
 ^^^^^^^^^^^^^^^^
@@ -103,6 +107,8 @@ Doc only changes
 Misc/Internal
 ^^^^^^^^^^^^^
 
+- Remove depreciation warning when use default remote tasks logging handlers (#25764)
+- clearer method name in scheduler_job.py (#23702)
 - Bump cattrs version (#25689)
 - Include missing mention of ``external_executor_id`` in ``sql_engine_collation_for_ids`` docs (#25197)
 - Refactor ``DR.task_instance_scheduling_decisions`` (#24774)
@@ -113,6 +119,7 @@ Misc/Internal
 - Limit astroid version to < 2.12 (#24982)
 - Move javascript compilation to host (#25169)
 - Bump typing-extensions and mypy for ParamSpec (#25088)
+- clearer method name in scheduler_job.py (#23702)
 
 
 Airflow 2.3.3 (2022-07-09)
